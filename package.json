@@ -1,6 +1,6 @@
 {
   "name": "string-translate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Replaces characters in a string given two sets of symbols",
   "main": "src/index.js",
   "scripts": {
