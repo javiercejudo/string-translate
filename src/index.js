@@ -7,8 +7,7 @@ var U = require('./U');
 
 var translate = R.curryN(3, function(oldSymbols, newSymbols, str) {
   return R.pipe(
-    R.map(U.indexOrValue(oldSymbols)),
-    R.map(U.nthOrValue(newSymbols)),
+    R.map(U.translateCharacter(oldSymbols, newSymbols)),
     U.joinWithoutSep
   )(str);
 });

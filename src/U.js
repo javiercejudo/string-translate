@@ -18,10 +18,14 @@ var nthSymbol = R.memoize(function(symbols) {
 
 module.exports = Object.freeze({
   joinWithoutSep: R.join(''),
-  indexOrValue: R.memoize(function(symbols) {
-    return R.memoize(R.ifElse(contains(symbols), indexOfSymbol(symbols), R.identity));
-  }),
-  nthOrValue: R.memoize(function(symbols) {
-    return R.memoize(R.ifElse(R.is(Number), nthSymbol(symbols), R.identity));
+  translateCharacter: R.memoize(function(oldSymbols, newSymbols) {
+    return R.memoize(R.ifElse(
+      contains(oldSymbols),
+      R.pipe(
+        indexOfSymbol(oldSymbols),
+        nthSymbol(newSymbols)
+      ),
+      R.identity
+    ));
   })
 });
