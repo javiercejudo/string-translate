@@ -14,4 +14,13 @@ Replaces characters in a string given two sets of symbols
 
 ```js
 var tr = require('string-translate');
+
+tr('abc', '123', 'abc');
+// => '123'
+
+tr('abB', 'aBb', 'abcB');
+// => 'aBcb'
+
+tr('ÁÉÍÓÚáéíóúñ', 'AEIOUaeioun', 'Álvaro García Goñi');
+// => 'Alvaro Garcia Goni'
 ```
