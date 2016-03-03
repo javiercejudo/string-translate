@@ -17,10 +17,14 @@ var tr = require('string-translate');
 
 tr('abc', '123', 'abc');
 // => '123'
+```
 
+```js
 tr('abB', 'aBb', 'abcB');
 // => 'aBcb'
+```
 
+```js
 tr('ÁÉÍÓÚáéíóúñ', 'AEIOUaeioun', 'Álvaro García Goñi');
 // => 'Alvaro Garcia Goni'
 ```
